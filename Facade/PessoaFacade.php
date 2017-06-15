@@ -36,5 +36,10 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/SGTransportes/"."Controller/PessoaContr
 	public function recuperarSenha($cpf, $senha){
 		return PessoaController::getInstance()->recuperarSenha($cpf, $senha);
 	}
+	
+	// Cadastra o horario de um aluno
+	public function cadastrarHorario($cpf, $vet_horario){
+		return PessoaController::getInstance()->cadastrarHorario($cpf, $vet_horario);
+	}
  }
  ?>

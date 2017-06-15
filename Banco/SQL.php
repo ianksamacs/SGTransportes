@@ -5,9 +5,11 @@ class Sql {
   public static $instance;
   private $schema = "sgtransportes";
   
+  // ------------------------------------ Tabela Aluno
   private $alunoTable = "aluno";
     
-  private $aluno_idCurso = "idCurso"; 
+  private $aluno_id		 		= "id"; 
+  private $aluno_idCurso 		= "idCurso"; 
   private $aluno_nome 			= "nome"; 
   private $aluno_cpf 			= "cpf"; 
   private $aluno_email 			= "email"; 
@@ -21,6 +23,16 @@ class Sql {
   private $aluno_fotoUrl		= "fotoUrl";
   private $aluno_matriculaUrl	= "matriculaUrl"; 
   private $aluno_compResidenciaUrl = "compResidenciaUrl";
+  // ----------------------------------------------------------
+  
+  // ------------------------------------ Tabela Dia
+  private $diaTable = "dia";
+  
+  private $dia_idAluno = "idAluno";
+  private $dia_nome    = "nome";
+  private $dia_ida     = "ida";
+  private $dia_volta   = "volta";
+  // ----------------------------------------------------------
   
   protected function __construct(){
 	  
@@ -55,5 +67,13 @@ class Sql {
   public function recuperarSenhaSQL(){
     return "UPDATE {$this->schema}.{$this->alunoTable} SET {$this->aluno_senha}=? WHERE {$this->aluno_cpf} = ?";
   }
+    
+  // Script para inserir um horário no banco
+  public function cadastrarHorarioSQL(){
+    return "INSERT INTO {$this->schema}.{$this->diaTable} ({$this->dia_idAluno}, {$this->dia_nome}, {$this->dia_ida}, {$this->dia_volta}) VALUES (?, ?, ?, ?)";
+	        
+  }
+  
+  
 }
     ?>

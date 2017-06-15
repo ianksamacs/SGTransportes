@@ -1,6 +1,7 @@
 <?php
 
 class Pessoa {
+	private $id = 0;
 	private $id_cur;
 	private $cpf;
 	private $nome;	
@@ -31,6 +32,14 @@ class Pessoa {
 		$this->url_ft 	= $url_ft; 
 		$this->url_mat 	= $url_mat; 
 		$this->url_res 	= $url_res;
+	}
+	
+	public function getId(){
+		return $this->id;
+	}
+	
+	public function setId($id){
+		$this->id = $id;
 	}
 	
 	public function getIdCurso(){

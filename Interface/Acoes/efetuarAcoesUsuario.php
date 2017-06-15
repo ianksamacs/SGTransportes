@@ -7,4 +7,8 @@
 		unset($_SESSION['senha']);
 		header('location:../Login.php');
 	}
+	else if(isset($_POST['cadastrarHorario'])){
+		// Chama a função que cadastra o horário
+		header('location:../CadastrarHorario.php');
+	}
  ?>

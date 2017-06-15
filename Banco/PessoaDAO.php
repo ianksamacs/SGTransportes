@@ -23,6 +23,8 @@ class PessoaDAO {
 			  
 		$pessoa = new Pessoa($row['idCurso'], $row['nome'], $row['cpf'], $row['email'], $row['senha'], $row['adm'], $row['bairro'], $row['rua'], $row['numeroCasa'], $row['semestreAtual'], $row['semestreEntrada'], $row['fotoUrl'], $row['matriculaUrl'], $row['compResidenciaUrl']); // Cria a instancia da classe passando como parâmetro os dados encontrados na busca
 		
+		$pessoa->setId($row['id']);
+		
 		return $pessoa; // Retorna a instancia criada
 	}
 
@@ -109,6 +111,47 @@ class PessoaDAO {
 
 		} catch (Excepetion $e){                                  // Caso a execução acima retorne algum erro uma excessão é lançada
 			echo "Falha (recuperarSenha): ". $e->getMessage(); // A mensagem referente ao erro é exibida
+		}
+		return FALSE;	
+	}
+	
+	public static function buscarIdUsuario($cpf){
+		try{ 
+			$sql = Sql::getInstance()->buscarPessoaSQL();   
+			$stmt = ConexaoDB::getConexaoPDO()->prepare($sql);
+			$stmt->bindParam(1,$cpf);
+			$stmt->execute();                                  
+			
+			$usuario = self::popularPessoa($stmt->fetch(PDO::FETCH_ASSOC));
+			
+			return $usuario->getId();
+			                    
+
+		} catch (Excepetion $e){                                  // Caso a execução acima retorne algum erro uma excessão é lançada
+			echo "Falha (buscarIdUsuario): ". $e->getMessage(); // A mensagem referente ao erro é exibida
+		}
+		return FALSE;		
+	}
+	
+		
+	public static function cadastrarHorario($id_Usuario, $vet_horario){
+		try{ 
+			for ($i = 0; $i <= 5; $i++) 
+				if(($vet_horario[$i][0] != 00) || ($vet_horario[$i][1] != 00)){
+					
+					$sql = Sql::getInstance()->cadastrarHorarioSQL();   
+					$stmt = ConexaoDB::getConexaoPDO()->prepare($sql);
+					$stmt->bindParam(1,$id_Usuario);
+					$stmt->bindParam(2,$vet_horario[$i][2]); // nome do dia
+					$stmt->bindParam(3,$vet_horario[$i][0]); // horario de ida
+					$stmt->bindParam(4,$vet_horario[$i][1]); // horario de vinda
+					$stmt->execute();               					
+				}
+				
+			return true;
+			            
+		} catch (Excepetion $e){                                  // Caso a execução acima retorne algum erro uma excessão é lançada
+			echo "Falha (cadastrarHorario): ". $e->getMessage(); // A mensagem referente ao erro é exibida
 		}
 		return FALSE;	
 	}

@@ -46,10 +46,11 @@ class  PessoaController {
 		return PessoaDAO::getInstance()->recuperarSenha($cpf, $senha);
 	}
   
-  
-  
-  
-  
+	// Cadastra o horario de um aluno
+	public function cadastrarHorario($cpf, $vet_horario){
+		$id_Usuario = PessoaDAO::getInstance()->buscarIdUsuario($cpf); // IMPLEMENTAR CÓDIGO
+		return PessoaDAO::getInstance()->cadastrarHorario($id_Usuario, $vet_horario);
+	}
   
 }  
  ?>

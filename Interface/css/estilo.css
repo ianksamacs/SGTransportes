@@ -1,0 +1,177 @@
+
+/*** GERAL **/
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: #00A3D9;
+	overflow-x:hidden; /*oculta a barra de rolagem horizontalmente */ 
+}
+header{ width: 100%; height: 90px; float: left;  overflow: hidden;}
+#box-tela{
+	width: 680px; 
+	height: 100%;
+	margin: 0 auto;
+}
+.aviso{background-color: #fff; width: 100%; height:55px;margin: 0 auto;  color: #FF0000;padding: 10px; padding-top:15px;font-size: 11pt; text-align: center; }
+
+.img-aviso{width: 55px;height: 55px; background-image:url("../img/aviso.jpg");float: left; background-size: cover;}
+
+input{width: 100%; height: 35px; margin-top: 10px; border:1px solid #00A3D9; padding-left: 7px} 
+
+input[type="submit"]{width: 100%; height: 35px; margin-top: 10px; border:none; background-color: #07409b;color: #fff} 
+
+input[type='file'] {  
+  display: none; /*esconde input do tipo file */
+}
+
+label {
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+ 
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 6px 20px;
+  float: left;
+}
+.azul{background-color: #3498db;}
+.vermelho{background-color: #d60404}
+
+
+
+
+
+
+
+
+
+input[type="radio"]{width: 10px; height: 35px; margin-top: 0px; border:1px solid #00A3D9; padding-left: 0px}
+
+hr{margin-top: 7px;opacity: 0.3}
+
+h3{font-family: arial; color:#7092BE; font-weight: normal; font-size: 17pt; text-align: center;}
+
+
+h4{font-family: arial; color:#7092BE; font-weight: normal; font-size: 14pt; }
+
+h5{font-family: arial;float: left; margin-top: 15px; font-weight: normal; margin-left: 20px; }
+
+@media screen and (max-width: 400px) { /* se a largura do dispositivo for de até 400px acontecera esse bloco */
+		#box-tela{
+			width: 100%; 
+		}
+}
+
+
+/**** login e recuperar senha **/
+#formulario{
+	 
+	background-color: #fff;
+	padding: 10px;
+	padding-top: 30px;
+	float: left;
+
+
+	/*sombras*/
+	-webkit-box-shadow: 1px 1px 15px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    1px 1px 15px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         1px 1px 15px 0px rgba(50, 50, 50, 0.75);
+}
+
+address{width: 250px;height: 220px; background-color: #EFEFEF; float: left;padding-top: 12px; padding-left: 20px;padding-right: 10px;
+/*sombras*/
+-webkit-box-shadow: 14px 2px 25px 0px rgba(50, 50, 50, 0.21);
+-moz-box-shadow:    14px 2px 25px 0px rgba(50, 50, 50, 0.21);
+box-shadow:         14px 2px 25px 0px rgba(50, 50, 50, 0.21);
+
+}
+
+
+
+
+/***** cadastro ******/
+
+#formulario-cadastro{
+	 
+	background-color: #fff;
+	padding: 10px;
+	padding-top: 30px;
+	float: left;
+
+
+	/*sombras*/
+	-webkit-box-shadow: 1px 1px 15px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    1px 1px 15px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         1px 1px 15px 0px rgba(50, 50, 50, 0.75);
+}
+
+
+select{width: 100%;  margin-top: 0px; border:1px solid #; }
+
+
+#box-lateral{width: 200px;height: 470px;background-color: #fff;float: left; 
+-webkit-border-top-left-radius: 10px;
+-moz-border-radius-topleft: 10px;
+border-top-left-radius: 10px;
+}
+
+
+#box_anexos{width: 200px;height: 130px;background-color: #FF9600;float: left; margin-top: 8px}
+
+
+
+#box_info{width: 180px;height: 130px;background-color: #ddd;float: left; margin-top: 28px;padding: 10px;}
+
+.anx{background-color: #FF8300; color: #fff; padding: 10px; border-radius: 10px; margin-top: -8px}
+.title-info{background-color: #7E878A;color: #fff; height: 25px;text-align: center; padding-top: 5px}
+
+
+.select-horario{width: 100%;height: 30px}
+
+
+#box-dia{width: 100%;height: 80px;background-color: #eee;margin-top: 10px}
+
+
+
+
+
+/* horarios */ 
+#box-horarios{
+	background-color: #fff;
+	padding: 10px;
+	padding-top: 30px;
+	float: left;
+
+
+	/*sombras*/
+	-webkit-box-shadow: 1px 1px 15px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    1px 1px 15px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         1px 1px 15px 0px rgba(50, 50, 50, 0.75);
+}
+
+.menu{width: 200px;height: 180px}
+
+
+#box-foto{width: 140px; padding:10px;background-color: #eee;float: left; }
+
+#box-tela-view{
+	width: 880px; 
+	height: 100%;
+	margin: 0 auto;background-color: #
+
+}
+
+@media screen and (max-width: 400px) { /* se a largura do dispositivo for de até 400px acontecera esse bloco */
+		#box-tela-view{
+			width: 100%;
+		}
+		#box-foto{width: 100%}
+}
+
+
+.nome{text-align: center;}
+.foto{margin-left: 16px;margin-top: 15px;float: left;}

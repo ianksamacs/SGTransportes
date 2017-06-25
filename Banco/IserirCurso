@@ -1,0 +1,14 @@
+CREATE  PROCEDURE adicionarAluno (
+
+  @id int(11),
+  @idInstituicao int(11),
+  @nome varchar(100)
+as 
+
+BEGIN 
+
+  INSERT INTO aluno(id, idInstituicao, nome)
+  VALUES (@id, @idInstituicao, @nome)
+  
+
+END ;

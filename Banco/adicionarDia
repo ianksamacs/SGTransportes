@@ -1,0 +1,14 @@
+CREATE PRODUCERE adicionarDia(
+  @id int(11),
+  @idAluno int(11),
+  @nome VARCHAR(10),
+  @ida int(1),
+  @volta(1)
+  
+ AS
+ 
+ BEGIN
+  INSERT INTO dia(id, idAluno, nome, ida, volta)
+  VALUES (@id, @idAluno, @nome, @ida, @volta)
+ 
+ END

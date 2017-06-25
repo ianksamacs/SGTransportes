@@ -1,0 +1,11 @@
+CREATE PRODUCERE adicionarInstituicao(
+  @id,
+  @nome
+  
+  AS
+  
+  BEGIN
+    INSERT INTO (id, nome)
+    VALUES (@id, @nome);
+  
+  END

@@ -1,0 +1,26 @@
+CREATE  PROCEDURE adicionarAluno (
+
+ @id` int(11),
+ @idCurso` int(11),
+ @nome` varchar(50),
+ @cpf` varchar(15),
+ @email` varchar(50),
+ @senha` varchar(32),
+ @adm` tinyint(1),
+ @bairro` varchar(50),
+ @rua` varchar(50),
+ @numeroCasa` int(11),
+ @semestreAtual` varchar(6),
+ @semestreEntrada` varchar(6),
+ @fotoUrl` varchar(50),
+ @matriculaUrl` varchar(50),
+ @compResidenciaUrl` varchar(50)
+as 
+
+BEGIN 
+
+  INSERT INTO aluno(id, idCurso, nome, cpf, email, senha, adm, bairro, rua, numeroCasa, semestreAtual, semestreEntrada, fotoUrl, compResidenciaUrl)
+  VALUES (@id, @idCurso, @nome, @cpf, @email, @senha, @adm, @bairro, @rua, @numeroCasa, @semestreAtual, @semestreEntrada, @fotoUrl, @compResidenciaUrl);
+  
+
+END ;

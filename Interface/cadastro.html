@@ -2,12 +2,16 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<script src="javascript/jquery-3.2.1.min.js"></script>
+	<script src="javascript/scripts.js"></script>
+	<script src="js/jquery.js"></script>
+  	<script src="js/jquery-filestyle.min.js"></script>
 	<meta charset="utf-8">
 </head>
 <body>
 
 	<div id="box-tela">
-		<header><div class="aviso"><div class="img-aviso"></div>aviso..</div></header>
+		<!-- <header><div class="aviso"><div class="img-aviso"></div>aviso..</div></header> -->
 	
 
 	<!-- 	<div id="box-lateral">
@@ -38,23 +42,41 @@
  -->
 
 
+ 		<script type="text/javascript">
 
-		<form id="formulario-cadastro">
+ 			
+ 			$(document).ready(function () {
+ 				$("#cpf").
+ 					if(TestaCPF($("#cpf").val())){
+ 						alert("foi");
+ 					}
+ 				}
+ 						
+ 				
+ 				
+ 				$("#sub").click(function(){
+ 					$("#cpf").removeClass("vermelhoB").addClass("azulB");
+ 				})
+ 			})
+
+ 		</script>
+		<form id="formulario" action="Acoes/efetuarCadastro.php" method="POST" enctype="multipart/form-data">
 			<h3>Informações Pessoais</h3>
 			<hr>
-				<input type="txt" placeholder="Seu nome">
-				<input type="txt" placeholder="RG">
-				<input type="txt" placeholder="CPF">
-				<input type="email" placeholder="e-mail">
-				<input type="txt" placeholder="Rua">
-				<input type="number" placeholder="Nº casa">
-				<input type="password" placeholder="Senha">
-				<input type="password" placeholder="Repita a senha">
+				<input class="ss"  type="txt" name="nome" placeholder="Seu nome" required>
+				<input class="vermelhoB" type="txt" id="cpf" placeholder="CPF (somente numeros)" name="cpf" required>
+				<input type="email" placeholder="e-mail" name="email" required>
+				<input type="password" id="senha1" placeholder="Senha" name="senha" required>
+				<input type="password" id="senha2" placeholder="Repita a senha" required>
+				<input type="txt" placeholder="Bairro" name="bairro" required>
+				<input type="txt" placeholder="Rua" name="rua" required>
+				<input type="number" placeholder="Nº casa" name="numero" required>
+				
 				<br><br>
 				<h3>Informações Acadêmicas</h3>
 			<hr> 
 				
-				<select>
+				<select required>
 					<option>Selecionar Instituição</option>
 					<option>---</option>
 					<option value="ceep">CEEP</option>
@@ -80,21 +102,69 @@
 			
 				</select>
 
+				<select name="sem_en">
+					<option>Semestre de Entrada</option>
+					<option>---</option>
+					<option value="2010.1">2010.1</option>
+					<option value="2010.2">2010.2</option>
+					<option value="2011.1">2011.1</option>
+					<option value="2011.2">2011.2</option>
+					<option value="2012.1">2012.1</option>
+					<option value="2012.2">2012.2</option>
+					<option value="2013.1">2013.1</option>
+					<option value="2013.2">2013.2</option>
+					<option value="2014.1">2014.1</option>
+					<option value="2014.2">2014.2</option>
+					<option value="2015.1">2015.1</option>
+					<option value="2015.2">2015.2</option>
+					<option value="2016.1">2016.1</option>
+					<option value="2016.2">2016.2</option>
+					<option value="2017.1">2017.1</option>
+					<option value="2017.2">2017.2</option>
+				</select> </BR></BR>
+			
+			Semestre Atual 	
+				<select name="sem_at">
+					<option>Semestre Atual</option>
+					<option>---</option>
+					<option value="1">1º</option>
+					<option value="2">2º</option>
+					<option value="3">3º</option>
+					<option value="4">4º</option>
+					<option value="5">5º</option>
+					<option value="6">6º</option>
+					<option value="7">7º</option>
+					<option value="8">8º</option>
+					<option value="9">9º</option>
+					<option value="10">10º</option>
+					<option value="11">11º</option>
+					<option value="12">12º</option>
+					<option value="13">13º</option>
+					<option value="14">14º</option>
+					<option value="15">15º</option>
+					<option value="16">16º</option>
+					<option value="17">17º</option>
+					<option value="18">18º</option>
+					<option value="19">19º</option>
+					<option value="20">20º</option>
+				</select>
+
 				<br><br>
 				<h3>Anexar documentos</h3>
 			<hr>
 				
-				<label class="azul" for='selecao-arquivo'>Comp. Matrícula </label>
-				<input id='selecao-arquivo' type='file'>
+				<!-- <label class="azul" for='selecao-arquivo'>Comp. Matrícula </label> -->
+				<h4>Comprovante de Matricula</h4>
+				<input  type='file' class="jfilestyle" data-buttonText="Find file" name="Arquivo_Foto" required>
+
+				<h4>Comprovante de Matricula</h4>
+				<!-- <label class="verde" for='selecao-arquivo'>Comp. Residência </label> -->
+				<input  type='file' name="Arquivo_Res" required>
 
 
-				<label class="azul" for='selecao-arquivo'>Comp. Residência </label>
-				<input id='selecao-arquivo' type='file'>
-
-
-
-				<label class="vermelho" for='selecao-arquivo'>Foto 3x4</label>
-				<input id='selecao-arquivo' type='file'>
+				<h4>Comprovante de Matricula</h4>
+				<!-- <label class="vermelho" for='selecao-arquivo'>Foto 3x4</label> -->
+				<input  type='file' name="Arquivo_Mat" required>
 
 
 	
@@ -103,8 +173,8 @@
 
 
 
-				<input type="submit" value="Proxima">
-				<input type="submit" value="Proxima">
+				<input type="submit" id="sub" name="cadastrar" value="Proxima">
+				
 			
 
 		</form>
